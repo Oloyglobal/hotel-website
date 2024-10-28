@@ -2,7 +2,10 @@ import React from 'react'
 
 const Hotels = () => {
   return (
-    <div>hotel</div>
+ <div>
+     <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, illo?</div>
+     <div>heolll</div>
+ </div>
   )
 }
 
