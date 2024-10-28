@@ -26,6 +26,8 @@ module.exports = {
         img7: "url('https://res.cloudinary.com/dicxuebms/image/upload/v1729884345/Rectangle_3_4_f3mviv.png)", 
 
         img14: "url('https://res.cloudinary.com/dicxuebms/image/upload/v1729884345/Rectangle_3_4_f3mviv.png')", 
+        img8:  "url('https://res.cloudinary.com/dlb3doese/image/upload/v1730116905/image_5_1_gztpdh.png')",
+        blank: "url('https://res.cloudinary.com/dlb3doese/image/upload/v1730118209/Rectangle_1_c8iuf6.png')"
       }
     },
   },
