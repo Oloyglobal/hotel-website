@@ -26,9 +26,11 @@ export default function App() {
           <Link to="/rooms" className="font-[400] text-[14px] lg:text-[16px] leading-[24px] text-cut">Rooms</Link>
           <Link to="/about" className="font-[400] text-[14px] lg:text-[16px] leading-[24px] text-cut">About</Link>
           <Link to="/contact" className="font-[400] text-[14px] lg:text-[16px] leading-[24px] text-cut">Contact</Link>
+
           <Link to="/login" className="font-[400] text-[14px] lg:text-[16px] leading-[24px] text-cut">
             <button className="h-[35px] w-[100px] bg-cutt text-white rounded-md text-[14px] lg:text-[16px]">Login</button>
           </Link>
+          
         </nav>
         <button className="sm:hidden" onClick={toggleMenu}>
           {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
