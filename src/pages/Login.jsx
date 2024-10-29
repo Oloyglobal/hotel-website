@@ -44,10 +44,10 @@ export default function Login() {
             <p className='text-xs mb-4 text-center'>
               By signing up you agree to <span className='text-cutt'>terms and conditions</span> at zoho
             </p>
-            <Link href="register">
+            <Link to="register">
               <button className='h-12 w-full max-w-xs bg-cutt text-white rounded-lg mb-4'>Register</button>
             </Link>
-            <Link href="login" className='text-sm underline'>
+            <Link to ="login" className='text-sm underline'>
               Already have an account? Login
             </Link>
           </div>
