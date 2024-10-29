@@ -1,6 +1,5 @@
 'use client'
 
-import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
 
 
@@ -9,7 +8,7 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleLoginRedirect = () => {
-    navigate('/register');
+    navigate('/createaccount');
   };
   return (
     <div className='flex flex-col lg:flex-row w-full min-h-screen p-4 lg:p-0'>
@@ -39,7 +38,7 @@ export default function Login() {
             </p>
               <button className='h-12 w-full max-w-xs bg-cutt text-white rounded-lg mb-4'>Login</button>
            
-            <button onClick={handleLoginRedirect}> Create account</button>
+            <button onClick={handleLoginRedirect} className='underline'> Create account</button>
           </div>
         </form>
       </div>

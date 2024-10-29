@@ -1,13 +1,13 @@
 'use client'
 
-import { Link, Navigate, useNavigate } from "react-router-dom"
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Createaccount() {
-    const useNavigate= useNavigate()
-    const handleredi =()=>{
-        Navigate('/login')
-    }
+    const navigate = useNavigate(); 
+
+    const handleredi = () => {
+        navigate('/login'); 
+    };
   return (
     <div className='flex flex-col lg:flex-row w-full min-h-screen p-4 lg:p-0'>
       <div className="w-full lg:w-1/2 h-[400px] lg:h-screen bg-img8 bg-cover rounded-t-[20px] lg:rounded-l-[20px] lg:rounded-tr-none flex items-center justify-center mb-4 lg:mb-0">
@@ -48,9 +48,7 @@ export default function Createaccount() {
             <p className='text-xs mb-4 text-center'>
               By signing up you agree to <span className='text-cutt'>terms and conditions</span> at zoho
             </p>
-            <Link to="register">
               <button className='h-12 w-full max-w-xs bg-cutt text-white rounded-lg mb-4'>Register</button>
-            </Link>
               <p>Already have an account? <button className="underline" onClick={handleredi}>Login</button></p>
           </div>
         </form>
