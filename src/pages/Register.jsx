@@ -1,7 +1,17 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
+
 import { Link } from 'react-router-dom'
 
 const Register = () => {
+  const navigate = useNavigate();
+
+  const handleLoginRedirect = () => {
+    navigate('/login');
+  };
+  const handle = () =>{
+    navigate('/login')
+  }
   return (
     <div>
         <div className='flex gap-9 justify-center items-center  p-1'>
@@ -50,10 +60,10 @@ const Register = () => {
             <label htmlFor="" className='mt-4'>Facilities</label>
             <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='Describe'/>
             <div className='w-[100%] m-auto flex flex-col mt-6'>
-                <button className='h-[40px] w-[370px] bg-cutt text-white rounded-lg'>Register</button>
-                <Link href="login" className='text-center underline mt-2'>
-                Login
-                </Link>
+              <button className='h-[40px] w-[390px] bg-cutt text-white rounded-lg' onClick={handleLoginRedirect}>Register</button>
+
+               <button onClick={handle} className='underline'> Login</button>
+                
             </div>
            
           </form>
