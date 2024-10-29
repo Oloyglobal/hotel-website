@@ -1,77 +1,82 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'
 
-import { Link } from 'react-router-dom'
-
-const Register = () => {
-  const navigate = useNavigate();
+export default function Component() {
+  const navigate = useNavigate()
 
   const handleLoginRedirect = () => {
-    navigate('/login');
-  };
-  const handle = () =>{
     navigate('/login')
   }
+
+  const handle = () => {
+    navigate('/login')
+  }
+
   return (
-    <div>
-        <div className='flex gap-9 justify-center items-center  p-1'>
-            <div className=" h-[600px] w-[40%] bg-white">
-        
-          <form action="" className='flex flex-col w-[70%] m-auto'>
-          <Link to="/">
-            <h1 className="text-[22px] sm:text-[26px] font-[500] leading-[39px] text-cutt ">
-              Lanka<span className="text-cut">Stay<span>.</span></span>
-            </h1>
-          </Link>
-            <label htmlFor="" className='mt-4'>Name</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='Enter your name'/>
-            <label htmlFor="" className='mt-4'>Email</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='ismailafeez080@gmail.com'/>
-            <label htmlFor="" className='mt-4'>Phone No</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='With country code'/>
-            <label htmlFor="" className='mt-4'>Country</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='Country name'/>
-            <label htmlFor="" className='mt-4'>Nic</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='National Identity No'/>
-            <label htmlFor="" className='mt-4'>Username</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='Username'/>
-            <label htmlFor="" className='mt-4'>Password</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='5+ Characters'/>
+    <div className="container mx-auto px-4 py-8">
+      <div className="flex flex-col lg:flex-row gap-9 justify-center items-start">
+        <div className="w-full lg:w-[40%] bg-white p-6 rounded-lg shadow-md mb-8 lg:mb-0">
+          <form className="flex flex-col w-full">
+            <Link to="/">
+              <h1 className="text-2xl sm:text-3xl font-medium leading-tight text-cutt mb-6">
+                Lanka<span className="text-cut">Stay<span>.</span></span>
+              </h1>
+            </Link>
+            {['Name', 'Email', 'Phone No', 'Country', 'Nic', 'Username', 'Password'].map((label) => (
+              <React.Fragment key={label}>
+                <label htmlFor={label.toLowerCase()} className="mt-4 text-sm font-medium">{label}</label>
+                <input
+                  type={label === 'Password' ? 'password' : 'text'}
+                  id={label.toLowerCase()}
+                  className="h-10 border-2 p-2 text-sm rounded-lg mt-1"
+                  placeholder={
+                    label === 'Email' ? 'ismailafeez080@gmail.com' :
+                    label === 'Phone No' ? 'With country code' :
+                    label === 'Nic' ? 'National Identity No' :
+                    label === 'Password' ? '5+ Characters' :
+                    `Enter your ${label.toLowerCase()}`
+                  }
+                />
+              </React.Fragment>
+            ))}
           </form>
-            </div>
-            <div className=" h-[600px] w-[40%] bg-white">
-           
-            <h1 className="text-[22px] sm:text-[26px] font-[500] leading-[39px] text-cutt text-center ">
-              Register <span className="text-cut">Your hotel<span>.</span></span>
-            </h1>
-      
-            <form action="" className='flex flex-col w-[70%] m-auto'>
-     
-            <label htmlFor="" className='mt-4'>Hotel Name</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='Full Name'/>
-            <label htmlFor="" className='mt-4'>Registration No</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='PV1(LTD)'/>
-            <label htmlFor="" className='mt-4'> Adress</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='Locaion'/>
-            <label htmlFor="" className='mt-4'>Upload Images</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='Country name'/>
-            <label htmlFor="" className='mt-4'>Upload Documents</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='Upload'/>
-            <label htmlFor="" className='mt-4'>Facilities</label>
-            <input type="text" name="" id=""  className='h-[35px] border-[2px] p-2 text-[12px] rounded-lg' placeholder='Describe'/>
-            <div className='w-[100%] m-auto flex flex-col mt-6'>
-              <button className='h-[40px] w-[390px] bg-cutt text-white rounded-lg' onClick={handleLoginRedirect}>Register</button>
-
-               <button onClick={handle} className='underline'> Login</button>
-                
-            </div>
-           
-          </form>
-            </div>
-
         </div>
+        <div className="w-full lg:w-[40%] bg-white p-6 rounded-lg shadow-md">
+          <h1 className="text-2xl sm:text-3xl font-medium leading-tight text-cutt text-center mb-6">
+            Register <span className="text-cut">Your hotel<span>.</span></span>
+          </h1>
+          <form className="flex flex-col w-full">
+            {['Hotel Name', 'Registration No', 'Address', 'Upload Images', 'Upload Documents', 'Facilities'].map((label) => (
+              <React.Fragment key={label}>
+                <label htmlFor={label.toLowerCase().replace(' ', '-')} className="mt-4 text-sm font-medium">{label}</label>
+                <input
+                  type="text"
+                  id={label.toLowerCase().replace(' ', '-')}
+                  className="h-10 border-2 p-2 text-sm rounded-lg mt-1"
+                  placeholder={
+                    label === 'Hotel Name' ? 'Full Name' :
+                    label === 'Registration No' ? 'PV1(LTD)' :
+                    label === 'Address' ? 'Location' :
+                    label === 'Facilities' ? 'Describe' :
+                    label
+                  }
+                />
+              </React.Fragment>
+            ))}
+            <div className="w-full flex flex-col mt-6">
+              <button
+                className="h-10 w-full bg-cutt text-white rounded-lg mb-4"
+                onClick={handleLoginRedirect}
+              >
+                Register
+              </button>
+              <button onClick={handle} className="text-cutt underline">
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   )
 }
-
-export default Register
