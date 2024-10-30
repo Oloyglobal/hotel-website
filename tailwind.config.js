@@ -13,7 +13,10 @@ module.exports = {
         cut: " #152C5B",
         cutt: " #3252DF",
         cut2: "#B0B0B0",
-        cut3: "#EAF1FF;"
+        cut3: "#EAF1FF;",
+        cut4: "#757575",
+        cut5: "#464A53",
+        cut6: "#0A0A0A",
 
       },
       backgroundImage: {
